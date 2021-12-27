@@ -1,0 +1,12 @@
+import re
+t=int(input())
+color_code=False
+for i in range(t):
+    n=input()
+    if '{' in n:
+        color_code=True
+    elif '}' in n:
+         color_code=False
+    elif color_code:
+         for color in re.findall(r'[#][0-9a-fA-F]{3,6}',n):    # color package= a-f,A-F len=either 3 OR 6
+             print(color)
